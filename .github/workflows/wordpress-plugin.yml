@@ -19,9 +19,6 @@ jobs:
           php-version: 8.1
           coverage: none
 
-      - name: Install dependencies
-        run: composer install --prefer-dist --no-progress --no-suggest --no-interaction
-
       - name: Check PHP Syntax
         run: find . -type f -name "*.php" -exec php -l {} \;
 
