@@ -26,10 +26,15 @@ jobs:
           tools: phpcs, cs2pr
           extensions: mbstring, intl, json, dom, curl
 
-      - name: Install WordPress Coding Standards
+      - name: Install WPCS + PHPCSUtils
         run: |
+          # Clone WPCS
           git clone --depth 1 --branch develop https://github.com/WordPress/WordPress-Coding-Standards.git wpcs
-          phpcs --config-set installed_paths $(pwd)/wpcs
+          # Clone PHPCSUtils
+          git clone --depth 1 https://github.com/PHPCSStandards/PHPCSUtils.git phpcsutils
+          # Register both paths
+          phpcs --config-set installed_paths "$(pwd)/wpcs,$(pwd)/phpcsutils"
+          # Show installed standards
           phpcs -i
 
       - name: Run PHPCS with WPCS
