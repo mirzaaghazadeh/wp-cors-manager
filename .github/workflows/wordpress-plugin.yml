@@ -31,7 +31,8 @@ jobs:
       - name: Extract version from index.php
         id: get_version
         run: |
-          VERSION=$(grep -E "Version:\s*[0-9]+\.[0-9]+(\.[0-9]+)?" index.php | sed -E 's/.*Version:\s*([0-9]+\.[0-9]+(\.[0-9]+)?).*/\1/')
+          VERSION=$(grep -i "Version:" index.php | head -n 1 | sed -E 's/.*Version:[[:space:]]*([0-9]+\.[0-9]+(\.[0-9]+)?).*/\1/')
+          echo "version=$VERSION"
           echo "version=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Build Plugin Zip
@@ -59,4 +60,4 @@ jobs:
         with:
           tag_name: v${{ steps.get_version.outputs.version }}
           name: Release v${{ steps.get_version.outputs.version }}
-          files: build/my-plugin-v${{ steps.get_version.outputs.version }}.zip
+          files: build/cors-manager-v${{ steps.get_version.outputs.version }}.zip
