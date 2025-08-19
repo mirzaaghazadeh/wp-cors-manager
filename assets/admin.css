@@ -1,0 +1,224 @@
+/* CORS Manager Admin Styles */
+
+.cors-manager-header {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+
+.cors-manager-header h2 {
+    margin-top: 0;
+    color: #23282d;
+    font-size: 1.3em;
+}
+
+.cors-manager-header p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.cors-manager-info {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+
+.cors-manager-info h3 {
+    margin-top: 0;
+    color: #23282d;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.cors-manager-info table {
+    margin-top: 15px;
+}
+
+.cors-manager-info table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.cors-manager-info table td:first-child {
+    width: 200px;
+    background: #f9f9f9;
+}
+
+.cors-manager-help {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+
+.cors-manager-help h3 {
+    margin-top: 0;
+    color: #23282d;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.help-section h4 {
+    color: #0073aa;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.help-section p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.help-section ul {
+    color: #666;
+    line-height: 1.6;
+}
+
+.help-section ul li {
+    margin-bottom: 5px;
+}
+
+/* Form styling */
+.form-table th {
+    width: 200px;
+    padding: 20px 10px 20px 0;
+    vertical-align: top;
+}
+
+.form-table td {
+    padding: 15px 10px;
+    vertical-align: top;
+}
+
+.form-table input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.form-table textarea {
+    width: 100%;
+    max-width: 500px;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 13px;
+}
+
+.form-table .description {
+    margin-top: 8px;
+    font-style: italic;
+    color: #666;
+}
+
+/* Method checkboxes */
+.form-table label {
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 5px;
+}
+
+/* Status indicators */
+.notice.inline {
+    margin: 5px 0 15px 0;
+    padding: 8px 12px;
+}
+
+.notice.notice-success {
+    border-left-color: #46b450;
+}
+
+.notice.notice-warning {
+    border-left-color: #ffb900;
+}
+
+/* Responsive design */
+@media screen and (max-width: 782px) {
+    .form-table th,
+    .form-table td {
+        display: block;
+        width: auto;
+        padding: 10px 0;
+    }
+    
+    .form-table th {
+        border-bottom: none;
+    }
+    
+    .cors-manager-header,
+    .cors-manager-info,
+    .cors-manager-help {
+        margin: 10px 0;
+        padding: 15px;
+    }
+}
+
+/* Button styling */
+.submit {
+    padding: 0;
+    margin-top: 20px;
+}
+
+.submit .button-primary {
+    background: #0073aa;
+    border-color: #0073aa;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0 -1px 1px #006799, 1px 0 1px #006799, 0 1px 1px #006799, -1px 0 1px #006799;
+    font-size: 13px;
+    line-height: 26px;
+    height: 28px;
+    margin: 0;
+    padding: 0 12px 2px;
+    cursor: pointer;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.submit .button-primary:hover {
+    background: #005a87;
+    border-color: #005a87;
+}
+
+/* Loading state */
+.cors-manager-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Success message styling */
+.cors-manager-success {
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+    padding: 12px;
+    border-radius: 4px;
+    margin: 15px 0;
+}
+
+/* Error message styling */
+.cors-manager-error {
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+    padding: 12px;
+    border-radius: 4px;
+    margin: 15px 0;
+}
+
+/* Code styling for origins */
+.cors-manager-code {
+    font-family: Consolas, Monaco, monospace;
+    background: #f1f1f1;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: 12px;
+}
