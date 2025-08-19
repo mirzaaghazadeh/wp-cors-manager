@@ -31,7 +31,7 @@ jobs:
       - name: Extract version from index.php
         id: get_version
         run: |
-          VERSION=$(grep -i "Version:" index.php | head -n 1 | sed -E 's/.*Version:[[:space:]]*([0-9]+\.[0-9]+(\.[0-9]+)?).*/\1/')
+          VERSION=$(grep -i "Version:" cors-manager.php | head -n 1 | sed -E 's/.*Version:[[:space:]]*([0-9]+\.[0-9]+(\.[0-9]+)?).*/\1/')
           echo "version=$VERSION"
           echo "version=$VERSION" >> $GITHUB_OUTPUT
 
