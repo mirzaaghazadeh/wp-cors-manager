@@ -26,7 +26,13 @@ jobs:
           tools: phpcs, cs2pr
           extensions: mbstring, intl, json, dom, curl
 
-      - name: WordPress Coding Standards
+      - name: Install WordPress Coding Standards
+        run: |
+          git clone -b master --depth 1 https://github.com/WordPress/WordPress-Coding-Standards.git wpcs
+          phpcs --config-set installed_paths $(pwd)/wpcs
+          phpcs -i
+
+      - name: Run PHPCS with WPCS
         run: |
           phpcs --standard=WordPress --extensions=php --ignore=vendor,node_modules . -q --report=checkstyle | cs2pr
 
@@ -66,10 +72,10 @@ jobs:
       - name: Deploy using SVN
         uses: 10up/action-wordpress-plugin-deploy@v2
         with:
-          slug: ${{ secrets.WPORG_SLUG }}            # e.g. "my-awesome-plugin"
-          svn-username: ${{ secrets.WPORG_USERNAME }}# your wp.org username
-          svn-password: ${{ secrets.WPORG_PASSWORD }}# your app password
-          asset-path: .wordpress-org                 # optional; for banner, icons, screenshots
+          slug: ${{ secrets.WPORG_SLUG }}
+          svn-username: ${{ secrets.WPORG_USERNAME }}
+          svn-password: ${{ secrets.WPORG_PASSWORD }}
+          asset-path: .wordpress-org
 
   github-release:
     name: Attach zip to GitHub Release
